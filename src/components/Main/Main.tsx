@@ -7,10 +7,11 @@ import { Box, Button, ButtonGroup, TextField, Typography } from '@mui/material';
 import { NewTimerForm } from '../NewTimerForm'
 
 export function Main(): ReactElement {
-
+    console.log('mounting Main component')
     const [timer, setTimer] = useState(timers)
 
     useEffect(() => {
+        console.log('start useEffect')
         let timeoutId: ReturnType<typeof setTimeout>;
             const tick = () => {
             setTimer(prevTimer =>
