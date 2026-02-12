@@ -88,36 +88,39 @@ export function NewTimerForm({ setTimer }) {
                     gap: 2,
                 }}
             >
-                <Box 
+                <Box data-testid='hourSection'
                     sx={{ 
                         display: 'flex', 
                         flexDirection: 'column', 
                         alignItems: 'center', 
-                        gap: 0.5
+                        gap: 1,
+                        my: 2
                     }}
                 >
                     <Button variant="outlined" size="small" onClick={incrementHourCount}>+</Button>
                     <Typography> {hourCount} hour(s) </Typography>
                     <Button variant="outlined" size="small" onClick={decrementHourCount}>-</Button>
                 </Box>
-                <Box 
+                <Box data-testid='minuteSection'
                     sx={{ 
                             display: 'flex', 
                             flexDirection: 'column', 
                             alignItems: 'center', 
-                            gap: 0.5
+                            gap: 1,
+                            my: 2
                         }}
                 >
                     <Button variant="outlined" size="small" onClick={incrementMinCount}>+</Button>
                     <Typography> {minCount} minute(s) </Typography>
                     <Button variant="outlined" size="small" onClick={decrementMinCount}>-</Button>
                 </Box>
-                <Box
+                <Box data-testid='secondSection'
                     sx={{ 
                         display: 'flex', 
                         flexDirection: 'column', 
                         alignItems: 'center', 
-                        gap: 0.5
+                        gap: 1,
+                        my: 2
                     }}
                 >
                     <Button variant="outlined" size="small" onClick={incrementSecCount}>+</Button>
