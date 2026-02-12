@@ -12,9 +12,7 @@ export function Main(): ReactElement {
     console.log('mounting Main component')
     const [timer, setTimer] = useState(timers)
 
-
     useEffect(() => {
-        console.log('start useEffect')
         let timeoutId: ReturnType<typeof setTimeout>;
             const tick = () => {
             setTimer(prevTimer =>
@@ -23,12 +21,10 @@ export function Main(): ReactElement {
                     return timer;
                 }
 
-
                 const nextRemaining = Math.max(0, timer.remainingSeconds - 1);
                 if (nextRemaining === timer.remainingSeconds) { // Do nothing if remaining seconds is the same
                     return timer;
                 }
-
 
                 return {
                     ...timer,
@@ -38,24 +34,19 @@ export function Main(): ReactElement {
                 })
             );
 
-
             timeoutId = setTimeout(tick, 1000);
             };
 
-
             timeoutId = setTimeout(tick, 1000);
-
 
             return () => {
             clearTimeout(timeoutId);
             };
     }, [])
 
-
     function handleDelete(id: string) {
         setTimer(prevTimer => prevTimer.filter(t => t.id !== id))
     }
-
 
     return(
         <div>
